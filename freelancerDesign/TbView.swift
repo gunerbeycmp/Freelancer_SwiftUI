@@ -9,7 +9,23 @@ import SwiftUI
 
 struct TbView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            ToDoView()
+                .tabItem {
+                    Image(systemName: "plus")
+                    Text("TO-DO")
+            }
+            InProgressView()
+                .tabItem {
+                    Image(systemName: "circle")
+                    Text("In Progress")
+            }
+            DoneView()
+                .tabItem {
+                    Image(systemName: "checkmark")
+                    Text("Done")
+            }
+        }
     }
 }
 
